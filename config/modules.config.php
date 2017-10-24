@@ -14,7 +14,6 @@ return [
     'Zend\InputFilter',
     'Zend\Filter',
     'Zend\Hydrator',
-    'Zend\I18n',
     'Zend\ServiceManager\Di',
     'Zend\Session',
     'Zend\Mvc\Plugin\Prg',
