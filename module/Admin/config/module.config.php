@@ -14,7 +14,7 @@ use Zend\ServiceManager\Factory\InvokableFactory;
 return [
     'router' => [
         'routes' => [
-            'home' => [
+            'admin_0' => [
                 'type' => Literal::class,
                 'options' => [
                     'route'    => '/admin',
@@ -24,7 +24,7 @@ return [
                     ],
                 ],
             ],
-            'admin' => [
+            'admin_1' => [
                 'type'    => Segment::class,
                 'options' => [
                     'route'    => '/admin[/:action]',
