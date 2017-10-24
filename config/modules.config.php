@@ -30,4 +30,5 @@ return [
     'Zend\Validator',
     'ZendDeveloperTools',
     'Application',
+    'Admin',
 ];
