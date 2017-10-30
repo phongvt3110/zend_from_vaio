@@ -18,6 +18,7 @@ return [
                 'type' => Literal::class,
                 'options' => [
                     'route'    => '/',
+                    'route'    => '/frontend/',
                     'defaults' => [
                         'controller' => Controller\FrontendController::class,
                         'action'     => 'index'
@@ -38,6 +39,7 @@ return [
                 'type' => Literal::class,
                 'options' => [
                     'route' => '/product',
+                    'route' => '/product/',
                     'defaults' => [
                         'controller' => Controller\ProductController::class,
                         'action'     => 'index'
