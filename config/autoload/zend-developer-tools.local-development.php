@@ -59,7 +59,7 @@ return [
              *
              * Example: 'matcher' => array('ip' => '127.0.0.1')
              * OR
-             * 'matcher' => array('url' => array('path' => '/admin')
+             * 'matcher' => array('url' => array('path' => '/frontend')
              * Note: The matcher is not implemented yet!
              */
             'matcher' => [],

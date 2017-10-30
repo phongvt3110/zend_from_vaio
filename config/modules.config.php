@@ -31,4 +31,5 @@ return [
     'ZendDeveloperTools',
     'Application',
     'Admin',
+    'Frontend'
 ];
