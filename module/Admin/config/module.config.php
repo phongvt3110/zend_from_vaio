@@ -18,6 +18,7 @@ return [
                 'type' => Literal::class,
                 'options' => [
                     'route'    => '/admin',
+                    'route'    => '/admin/',
                     'defaults' => [
                         'controller' => Controller\AdminController::class,
                         'action'     => 'index',
