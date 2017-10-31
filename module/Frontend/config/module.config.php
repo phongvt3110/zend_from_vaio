@@ -17,7 +17,7 @@ return [
             'frontend_root' => [
                 'type' => Literal::class,
                 'options' => [
-                    'route'    => '/',
+                    'route'    => '/frontend',
                     'route'    => '/frontend/',
                     'defaults' => [
                         'controller' => Controller\FrontendController::class,
@@ -75,13 +75,13 @@ return [
             'frontend/frontend/index'       => __DIR__ . '/../view/frontend/index/index.phtml',
             'frontend/frontend/home'        => __DIR__ . '/../view/frontend/home/home.phtml',
             'frontend/frontend/products'    => __DIR__ . '/../view/frontend/products/index.phtml',
-            'error/404'               => __DIR__ . '/../view/error/404.phtml',
-            'error/index'             => __DIR__ . '/../view/error/index.phtml',
             'frontend/product/index'   => __DIR__ . '../view/product/index/index.phtml',
             'frontend/product/add'     => __DIR__ . '../view/product/add/add.phtml',
             'frontend/product/find'     => __DIR__ . '../view/product/find/find.phtml',
             'frontend/product/details'  => __DIR__ . '../view/product/details/details.phtml',
-            'frontend/product/delete'   => __DIR__ . '../view/product/delete/delele.phtml'
+            'frontend/product/delete'   => __DIR__ . '../view/product/delete/delele.phtml',
+            'error/404'               => __DIR__ . '/../view/error/404.phtml',
+            'error/index'             => __DIR__ . '/../view/error/index.phtml'
         ],
         'template_path_stack' => [
             __DIR__ . '/../view',

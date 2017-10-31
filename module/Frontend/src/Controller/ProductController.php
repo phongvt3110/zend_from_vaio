@@ -20,6 +20,7 @@ class ProductController extends AbstractActionController
     }
     public function addAction()
     {
+        echo '<h1>Hello product add</h1>';
         $viewModel = new ViewModel();
         return $viewModel;
     }
