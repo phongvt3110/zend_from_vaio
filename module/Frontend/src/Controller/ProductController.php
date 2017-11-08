@@ -20,8 +20,22 @@ class ProductController extends AbstractActionController
     }
     public function addAction()
     {
-        echo '<h1>Hello product add</h1>';
         $viewModel = new ViewModel();
+        $data = [
+            'mobile' => 'Samsung',
+            'tab'    => 'IPad'
+        ];
+        $content = [
+            'article' => 'news',
+            'sport'   => 'football'
+        ];
+        $viewModel->setVariables(
+            [
+                'data' => isset($data)?$data:null,
+                'content' => isset($content)? $content:null
+            ]
+        );
+        //echo 'print viewModel variables:'. $viewModel->getVariable('data') . '  viewModel';
         return $viewModel;
     }
     public function findAction()
