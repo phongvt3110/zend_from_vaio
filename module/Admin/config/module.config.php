@@ -35,12 +35,33 @@ return [
                     ],
                 ],
             ],
-        ],
+            'album_home' => [
+                'type' => Literal::class,
+                'options' => [
+                    'route'    => '/album',
+                    'route'    => '/album/',
+                    'defaults' => [
+                        'controller' => Controller\AlbumController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ],
+            'album_actions' => [
+                'type'    => Segment::class,
+                'options' => [
+                    'route'    => '/album[/:action]',
+                    'defaults' => [
+                        'controller' => Controller\AlbumController::class,
+                        'action'     => 'index',
+                    ],
+                ],
+            ]
+        ]
     ],
     'controllers' => [
         'factories' => [
-            Controller\AdminController::class => InvokableFactory::class,
-        ],
+            Controller\AdminController::class => InvokableFactory::class
+        ]
     ],
     'view_manager' => [
         'display_not_found_reason' => true,
@@ -52,6 +73,7 @@ return [
             'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
             'admin/admin/index'       => __DIR__ . '/../view/admin/index/index.phtml',
             'admin/admin/home'        => __DIR__ . '/../view/admin/home/home.phtml',
+            'admin/album/index'       => __DIR__ . '/../view/album/index/index.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ],
