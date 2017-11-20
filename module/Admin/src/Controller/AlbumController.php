@@ -42,11 +42,18 @@ class AlbumController extends AbstractActionController
         return $viewModel;
     }
 
-//    protected function getAlbumTable(){
-//        if(!$this->albumTable){
-//            $sm = $this->getServiceLocator();
-//            $this->table->fetchAll(); //= $sm->get('Admin\Model\AlbumTable');
-//        }
-//        return $this->albumTable;
-//    }
+    public function addAction(){
+        $viewModel = new ViewModel();
+        return $viewModel;
+    }
+
+    public function editAction(){
+        $viewModel = new ViewModel();
+        return $viewModel;
+    }
+
+    public function deleteAction(){
+        $viewModel = new ViewModel();
+        return $viewModel;
+    }
 }

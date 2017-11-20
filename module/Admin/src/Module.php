@@ -2,8 +2,6 @@
 
 namespace Admin;
 
-use Admin\Model\Album;
-use Admin\Model\AlbumTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Adapter\AdapterInterface;
@@ -22,14 +20,13 @@ class Module implements ConfigProviderInterface
         return [
             'factories' => [
                 Model\AlbumTable::class => function($sm){
-                    $tableGateway = $sm->get(Model\AlbumTable::class);
-                    $table = new AlbumTable($tableGateway);
-                    return $table;
+                    $tableGateway = $sm->get(Model\AlbumTableGateway::class);
+                    return new Model\AlbumTable($tableGateway);
                 },
                 Model\AlbumTableGateway::class => function($sm){
                     $dbAdapter = $sm->get(AdapterInterface::class);
                     $resultSetPropotype = new ResultSet();
-                    $resultSetPropotype->setArrayObjectPrototype(new Album());
+                    $resultSetPropotype->setArrayObjectPrototype(new Model\Album);
                     return new TableGateway('albums',$dbAdapter, null, $resultSetPropotype);
                 }
             ]
@@ -38,12 +35,10 @@ class Module implements ConfigProviderInterface
 
     public function getControllerConfig(){
         return [
-            'controllers' => [
-                'factories' => [
-                    Controller\AlbumController::class => function($container) {
-                        return new Controller\AlbumController($container->get(Model\AlbumTable::class));
-                    }
-                ]
+            'factories' => [
+                Controller\AlbumController::class => function($container) {
+                    return new Controller\AlbumController($container->get(Model\AlbumTable::class));
+                }
             ]
         ];
     }
