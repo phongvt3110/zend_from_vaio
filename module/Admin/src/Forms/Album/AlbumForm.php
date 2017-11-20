@@ -40,7 +40,7 @@ class AlbumForm extends Form
             'name' => 'submit',
             'type' => 'Submit',
             'attributes' => [
-                'value' => 'Go',
+                'value' => 'Add',
                 'id'    => 'submitbutton'
             ]
         ]);

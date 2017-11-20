@@ -8,9 +8,11 @@
 
 namespace Admin\Controller;
 
+use Admin\Model\Album;
 use Admin\Model\AlbumTable;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;
+use Admin\Forms\Album\AlbumForm;
 
 class AlbumController extends AbstractActionController
 {
@@ -45,6 +47,21 @@ class AlbumController extends AbstractActionController
 
     public function addAction(){
         $viewModel = new ViewModel();
+        $this->layout('layout/adminlayout');
+        $form = new AlbumForm();
+        $form->get('submit')->setValue('Add');
+        $request = $this->getRequest();
+        if($request->isPost()){
+            $album = new Album();
+            $form->setInputFilter($album->getInputFilter());
+            $form->setData($request->getPost());
+            if($form->isValid()){
+                $album->exchangeArray($form->getData());
+                $this->table->saveAlbum($album);
+                return $this->redirect()->toRoute('album_home');
+            }
+        }
+        $viewModel->setVariables(['form' => $form]);
         return $viewModel;
     }
 
