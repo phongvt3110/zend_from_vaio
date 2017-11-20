@@ -24,7 +24,7 @@ class AlbumForm extends Form
             'name' => 'title',
             'type' => 'Text',
             'options' => [
-                'label' => 'Title'
+                'label' => 'Title:'
             ]
         ]);
 
@@ -32,7 +32,7 @@ class AlbumForm extends Form
             'name' => 'artist',
             'type' => 'Text',
             'options' => [
-                'label' => 'Artist'
+                'label' => 'Artist:'
             ]
         ]);
 

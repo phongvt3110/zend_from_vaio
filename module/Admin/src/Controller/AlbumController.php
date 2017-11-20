@@ -49,7 +49,7 @@ class AlbumController extends AbstractActionController
         $viewModel = new ViewModel();
         $this->layout('layout/adminlayout');
         $form = new AlbumForm();
-        $form->get('submit')->setValue('Add');
+        $form->get('submit')->setValue('Add new album');
         $request = $this->getRequest();
         if($request->isPost()){
             $album = new Album();
