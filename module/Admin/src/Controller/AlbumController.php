@@ -39,6 +39,7 @@ class AlbumController extends AbstractActionController
                 'content' => isset($content)? $content:null
             ]
         );
+        $this->layout('layout/adminlayout');
         return $viewModel;
     }
 

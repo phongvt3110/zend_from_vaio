@@ -1,1 +1,12 @@
-<h1>Album Add pages</h1>
+<?=
+$title = 'Add album';
+$this->headTitle($title);
+?>
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<h3>Add new album</h3>
+<form action="">
+    Title: <input type="text" name="title"><br>
+    Artist: <input type="text" name="artist"><br>
+    <input type="submit" value="Submit">
+</form>

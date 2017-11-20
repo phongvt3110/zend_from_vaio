@@ -14,15 +14,18 @@ class FrontendController extends AbstractActionController
 {
     public function indexAction()
     {
+        $this->layout('layout/frontendlayout');
         return new ViewModel();
     }
     public function homeAction(){
+        $this->layout('layout/frontendlayout');
         return new ViewModel();
     }
     public function productsAction(){
         $viewModel = new ViewModel();
         $data = 'Samsung';
         $viewModel->setVariables(['data' => isset($data)?$data:null]);
+        $this->layout('layout/frontendlayout');
         return $viewModel;
     }
 }

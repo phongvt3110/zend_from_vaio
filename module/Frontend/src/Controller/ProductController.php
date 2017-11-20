@@ -36,21 +36,25 @@ class ProductController extends AbstractActionController
             ]
         );
         //echo 'print viewModel variables:'. $viewModel->getVariable('data') . '  viewModel';
+        $this->layout('layout/frontendlayout');
         return $viewModel;
     }
     public function findAction()
     {
         $viewModel = new ViewModel();
+        $this->layout('layout/frontendlayout');
         return $viewModel;
     }
     public function deleteAction()
     {
         $viewModel = new ViewModel();
+        $this->layout('layout/frontendlayout');
         return $viewModel;
     }
     public function detailsAction()
     {
         $viewModel = new ViewModel();
+        $this->layout('layout/frontendlayout');
         return $viewModel;
     }
 }

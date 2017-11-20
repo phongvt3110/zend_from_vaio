@@ -70,7 +70,7 @@ return [
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => [
-            'layout/layout'                 => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/frontendlayout'         => __DIR__ . '/../view/layout/frontendlayout.phtml',
             'frontend/frontend/index'       => __DIR__ . '/../view/frontend/index/index.phtml',
             'frontend/frontend/home'        => __DIR__ . '/../view/frontend/home/home.phtml',
             'frontend/frontend/products'    => __DIR__ . '/../view/frontend/products/index.phtml',

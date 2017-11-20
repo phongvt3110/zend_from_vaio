@@ -28,7 +28,11 @@ return [
             'admin_actions' => [
                 'type'    => Segment::class,
                 'options' => [
-                    'route'    => '/admin[/:action]',
+                    'route'    => '/admin[/:action][/:id]',
+                    'constraints' => [
+                        'action' => '[a-zA-Z][a-zA-Z0-9_-]*',
+                        'id'     => '[0-9]+'
+                    ],
                     'defaults' => [
                         'controller' => Controller\AdminController::class,
                         'action'     => 'index',
@@ -74,13 +78,13 @@ return [
         'not_found_template'       => 'error/404',
         'exception_template'       => 'error/index',
         'template_map' => [
-            'layout/layout'           => __DIR__ . '/../view/layout/layout.phtml',
+            'layout/adminlayout'      => __DIR__ . '/../view/layout/adminlayout.phtml',
             'admin/admin/index'       => __DIR__ . '/../view/admin/index/index.phtml',
             'admin/admin/home'        => __DIR__ . '/../view/admin/home/home.phtml',
             'admin/album/index'       => __DIR__ . '/../view/album/index/index.phtml',
-            'admin/album/add'       => __DIR__ . '/../view/album/add/add.phtml',
-            'admin/album/edit'       => __DIR__ . '/../view/album/edit/edit.phtml',
-            'admin/album/delete'       => __DIR__ . '/../view/album/delete/delete.phtml',
+            'admin/album/add'         => __DIR__ . '/../view/album/add/add.phtml',
+            'admin/album/edit'        => __DIR__ . '/../view/album/edit/edit.phtml',
+            'admin/album/delete'      => __DIR__ . '/../view/album/delete/delete.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ],
