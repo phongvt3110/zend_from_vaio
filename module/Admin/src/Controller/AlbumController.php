@@ -67,6 +67,7 @@ class AlbumController extends AbstractActionController
 
     public function editAction(){
         $viewModel = new ViewModel();
+        $this->layout('layout/admin2layout');
         return $viewModel;
     }
 

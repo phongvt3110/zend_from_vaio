@@ -79,6 +79,7 @@ return [
         'exception_template'       => 'error/index',
         'template_map' => [
             'layout/adminlayout'      => __DIR__ . '/../view/layout/adminlayout.phtml',
+            'layout/admin2layout'      => __DIR__ . '/../view/layout/admin2layout.phtml',
             'admin/admin/index'       => __DIR__ . '/../view/admin/index/index.phtml',
             'admin/admin/home'        => __DIR__ . '/../view/admin/home/home.phtml',
             'admin/album/index'       => __DIR__ . '/../view/album/index/index.phtml',
