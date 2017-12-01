@@ -6,8 +6,14 @@ $this->headTitle($title);
 
     <form action="<?= $this->url('album_actions', array('action' => 'add')) ?>" method="post">
          <input type="hidden" name="id"><br>
-            <label style="width: 20%">Title: </label><input type="text" name="title"><br>
-            <label style="width: 20%">Artist: </label><input type="text" name="artist"><br>
+        <div class="col-md-1">
+            <label style="width: 100px; margin-bottom: 20px " >Title: </label> <br/>
+            <label style="width: 100px; margin-bottom: 20px ">Artist: </label>
+        </div>
+        <div class="col-md-11">
+            <input style="margin-bottom: 20px" type="text" name="title"><br />
+            <input style="margin-bottom: 20px" type="text" name="artist">
+        </div>
          <input type="submit" class="btn btn-success" value="Add new album">
     </form>
 
