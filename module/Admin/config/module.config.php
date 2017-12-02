@@ -87,6 +87,7 @@ return [
             'admin/album/edit'        => __DIR__ . '/../view/album/edit/edit.phtml',
             'admin/album/editfinish'  => __DIR__ . '/../view/album/edit/editfinish.phtml',
             'admin/album/delete'      => __DIR__ . '/../view/album/delete/delete.phtml',
+            'admin/album/deletenotsucces'      => __DIR__ . '/../view/album/delete/deletenotsuccess.phtml',
             'error/404'               => __DIR__ . '/../view/error/404.phtml',
             'error/index'             => __DIR__ . '/../view/error/index.phtml',
         ],

@@ -113,6 +113,14 @@ class AlbumController extends AbstractActionController
 
     public function deleteAction(){
         $viewModel = new ViewModel();
-        return $viewModel;
+        $this->layout('layout/admin2layout');
+        $id = $this->params()->fromRoute('id',0);
+        if($id){
+            $this->table->deleteAlbum($id);
+            return $viewModel;
+        } else {
+            $viewModel->setTemplate('admin/album/deletenotsucces');
+            return $viewModel;
+        }
     }
 }
