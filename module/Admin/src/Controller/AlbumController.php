@@ -68,6 +68,46 @@ class AlbumController extends AbstractActionController
     public function editAction(){
         $viewModel = new ViewModel();
         $this->layout('layout/admin2layout');
+
+        $request = $this->getRequest();
+        if($request->isPost()){
+//            $cid = $this->getRequest()->getPost('id');   //another way to get id
+//            $id = $this->params()->fromPost('id',0); //another way to get id
+//            echo 'cid='. $cid;
+//            echo 'id='. $id;die(0);
+            $id = $request->getPost('id');
+            $title = $request->getPost('title');
+            $artist = $request->getPost('artist');
+
+            $album = new Album();
+            $album->id = $id;
+            $album->title = $title;
+            $album->artist = $artist;
+            $this->table->saveAlbum($album);
+
+            $viewModel->setTemplate('admin/album/editfinish');
+            return $viewModel;
+        }
+        $id = $this->params()->fromRoute('id',0);
+
+        if(!$id) {
+            $this->redirect()->toRoute('album', ['action' => 'add']);
+        }
+        try{
+            $album = $this->table->getAlbum($id);
+        } catch (\Exception $ex) {
+            return $this->redirect()->toRoute('album', ['action' => 'index']);
+        }
+        $data = [
+            'mobile' => 'Samsung',
+            'tab'    => 'IPad',
+            'album' => isset($album)? $album : null
+        ];
+        $viewModel->setVariables(
+            [
+                'data' => isset($data)?$data:null
+            ]
+        );
         return $viewModel;
     }
 
